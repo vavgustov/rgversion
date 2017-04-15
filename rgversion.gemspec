@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["vavgustov"]
   spec.email         = ["vavgustov@gmail.com"]
 
-  spec.summary       = %q{rgversion is a library to quickly copy to clipboard latest version for the specific gem.}
-  spec.description   = %q{rgversion is a library to quickly copy to clipboard latest version for the specific gem.}
+  spec.summary       = %q{This library allow you to quickly copy latest semantic versions of specified gems to your clipboard. .}
+  spec.description   = %q{This library allow you to quickly copy latest semantic versions of specified gems to your clipboard. .}
   spec.homepage      = "https://github.com/vavgustov/rgversion"
   spec.license       = "MIT"
   
