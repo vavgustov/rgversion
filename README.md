@@ -4,7 +4,7 @@ TODO: Coming soon...
 
 ## Installation
 
-    $ gem install rgversion
+TODO: Coming soon...    
 
 ## Usage
 
