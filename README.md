@@ -1,4 +1,4 @@
-# Rgversion [![Gem Version](https://badge.fury.io/rb/rgversion.svg)](https://badge.fury.io/rb/rgversion) [![Build Status](https://travis-ci.org/vavgustov/rgversion.svg?branch=master)](https://travis-ci.org/vavgustov/rgversion) [![Code Climate](https://codeclimate.com/github/vavgustov/rgversion.svg)](https://codeclimate.com/github/vavgustov/rgversion) 
+# Rgversion [![Gem](https://img.shields.io/gem/v/rgversion.svg)](https://rubygems.org/gems/rgversion) [![Build Status](https://img.shields.io/travis/vavgustov/rgversion/master.svg)](https://travis-ci.org/vavgustov/rgversion) [![Code Climate](https://img.shields.io/codeclimate/github/vavgustov/rgversion.svg)](https://codeclimate.com/github/vavgustov/rgversion) 
 
 TODO: Coming soon...
 
