@@ -13,7 +13,7 @@ module Rgversion
         begin
           gem_text << grab_version(gem)
         rescue OpenURI::HTTPError
-          puts "#{gem_url} not found"
+          puts "#{gem} not found"
         end
       end
       gem_text
