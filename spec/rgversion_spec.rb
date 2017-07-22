@@ -10,7 +10,7 @@ RSpec.describe Rgversion do
 
     # this test will not work when version has been updated but not pushed to rubygems.org yet
     it 'return correct version' do
-      expect(spider.output.first).to match('Rgversion::VERSION')
+      expect(spider.output.first).to match(Rgversion::VERSION)
     end
   end
 end
