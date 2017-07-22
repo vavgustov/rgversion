@@ -1,7 +1,7 @@
 # rgversion [![Gem](https://img.shields.io/gem/v/rgversion.svg)](https://rubygems.org/gems/rgversion) [![Build Status](https://img.shields.io/travis/vavgustov/rgversion/master.svg)](https://travis-ci.org/vavgustov/rgversion) [![Code Climate](https://img.shields.io/codeclimate/github/vavgustov/rgversion.svg)](https://codeclimate.com/github/vavgustov/rgversion)
  
 This library allow you to quickly copy latest semantic versions of specified gems to your clipboard. Versions will be taken from [`rubygems.org`](https://rubygems.org/). Then you can past them in your `Gemfile`.
-![image](https://cloud.githubusercontent.com/assets/312873/25066821/21615b82-223a-11e7-8110-4e91127a0b6c.png)
+![image](https://user-images.githubusercontent.com/312873/28492511-d2dbf140-6f0d-11e7-9912-beb8b94a1ca7.png)
 
 ## Installation
 
@@ -9,8 +9,11 @@ This library allow you to quickly copy latest semantic versions of specified gem
 gem install rgversion
 ```
 
-Copy to clipboard work through ``pbcopy`` and will be work out from the box on macOS / OS X.
-To make it work in Ubuntu / Debian you can follow these [steps](https://coderwall.com/p/oaaqwq/pbcopy-on-ubuntu-linux). 
+##### macOS / OS X
+No further actions required.
+
+##### Debian / Ubuntu
+Copy to clipboard work through ``pbcopy`` and to make it work on Ubuntu / Debian you can follow these [steps](https://coderwall.com/p/oaaqwq/pbcopy-on-ubuntu-linux). 
 
 ## Usage
 Open terminal and execute ``rgversion`` with list of needed gems. E.g:
