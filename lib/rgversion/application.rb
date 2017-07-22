@@ -1,5 +1,4 @@
-module RgVersion
-  # Main application
+module Rgversion
   module Application
     def self.run
       RgVersion::Terminal.copy_to_clipboard

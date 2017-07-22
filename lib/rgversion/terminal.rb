@@ -1,8 +1,9 @@
-module RgVersion
+module Rgversion
   # Terminal operations
   module Terminal
     def self.copy_to_clipboard
-      version = RgVersion::Spider.grab_version
+      spider = RgVersion::Spider.new(ARGV)
+      version = spider.output
       unless version.empty?
         version = version.join("\n")
         `echo "#{version}" | pbcopy`

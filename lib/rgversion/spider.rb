@@ -1,21 +1,30 @@
 require 'nokogiri'
 require 'open-uri'
 
-module RgVersion
-  # Spider take content from https://rubygems.org/
-  module Spider
-    def self.grab_version
+module Rgversion
+  class Spider
+    def initialize(gems)
+      @gems = gems
+    end
+
+    def output
       gem_text = []
-      ARGV.each do |arg|
+      @gems.each do |gem|
         begin
-          gem_url = "https://rubygems.org/gems/#{arg}"
-          gem_page = Nokogiri::HTML(open(gem_url))
-          gem_text << gem_page.at('#gemfile_text')['value']
+          gem_text << grab_version(gem)
         rescue OpenURI::HTTPError
           puts "#{gem_url} not found"
         end
       end
       gem_text
+    end
+
+    private
+
+    def grab_version(gem)
+      gem_url = "https://rubygems.org/gems/#{gem}"
+      gem_page = Nokogiri::HTML(open(gem_url))
+      gem_page.at('#gemfile_text')['value']
     end
   end
 end
