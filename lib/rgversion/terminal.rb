@@ -2,7 +2,7 @@ module Rgversion
   # Terminal operations
   module Terminal
     def self.copy_to_clipboard
-      spider = RgVersion::Spider.new(ARGV)
+      spider = Rgversion::Spider.new(ARGV)
       version = spider.output
       unless version.empty?
         version = version.join("\n")
