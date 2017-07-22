@@ -8,9 +8,8 @@ RSpec.describe Rgversion do
   describe 'spider' do
     let(:spider) { Rgversion::Spider.new(%w[rgversion]) }
 
-    # this test will not work when version has been updated but not pushed to rubygems.org yet
     it 'return correct version' do
-      expect(spider.output.first).to match(Rgversion::VERSION)
+      expect(spider.output.first).to match(Regexp.union([Rgversion::VERSION, Rgversion::PREVIOUS_VERSION]))
     end
   end
 end
