@@ -1,7 +1,7 @@
 # coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rgversion/version'
+require "rgversion/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "rgversion"
@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["vavgustov"]
   spec.email         = ["vavgustov@gmail.com"]
 
-  spec.summary       = %q{Copy latest semantic versions of specified gems to your clipboard.}
-  spec.description   = %q{This library allow you to quickly copy latest semantic versions of specified gems to your clipboard.}
+  spec.summary       = "Copy latest semantic versions of specified gems to your clipboard."
+  spec.description   = "This library allow you to quickly copy latest semantic versions of specified gems to your clipboard."
   spec.homepage      = "https://github.com/vavgustov/rgversion"
   spec.license       = "MIT"
   
