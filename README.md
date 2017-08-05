@@ -12,7 +12,7 @@ gem install rgversion
 ##### macOS / OS X
 No further actions required.
 
-##### Debian / Ubuntu
+##### Ubuntu / Debian
 Copy to clipboard work through ``pbcopy`` and to make it work on Ubuntu / Debian you can follow these [steps](https://coderwall.com/p/oaaqwq/pbcopy-on-ubuntu-linux). 
 
 ## Usage
