@@ -1,4 +1,5 @@
 require "rgversion/version"
 require "rgversion/application"
+require "rgversion/exceptions"
 require "rgversion/spider"
 require "rgversion/terminal"
