@@ -1,5 +1,5 @@
-require 'nokogiri'
-require 'open-uri'
+require "nokogiri"
+require "open-uri"
 
 module Rgversion
   class Spider
@@ -24,7 +24,7 @@ module Rgversion
     def grab_version(gem)
       gem_url = "https://rubygems.org/gems/#{gem}"
       gem_page = Nokogiri::HTML(open(gem_url))
-      gem_page.at('#gemfile_text')['value']
+      gem_page.at("#gemfile_text")["value"]
     end
   end
 end
