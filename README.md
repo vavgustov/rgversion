@@ -1,4 +1,4 @@
-# rgversion [![Gem](https://img.shields.io/gem/v/rgversion.svg)](https://rubygems.org/gems/rgversion) [![Build Status](https://img.shields.io/travis/vavgustov/rgversion/master.svg)](https://travis-ci.org/vavgustov/rgversion)
+# Rgversion [![Gem](https://img.shields.io/gem/v/rgversion.svg)](https://rubygems.org/gems/rgversion) [![Build Status](https://img.shields.io/travis/vavgustov/rgversion/master.svg)](https://travis-ci.org/vavgustov/rgversion)
  
 This library allow you to quickly copy latest semantic versions of specified gems to your clipboard. Versions will be taken from [`rubygems.org`](https://rubygems.org/). Then you can past them in your `Gemfile`.
 ![image](https://user-images.githubusercontent.com/312873/28492511-d2dbf140-6f0d-11e7-9912-beb8b94a1ca7.png)
@@ -26,4 +26,4 @@ After that semantic version of gem(s) will be copied to your clipboard.
 
 ## License
 
-rgversion is released under the [MIT License](https://opensource.org/licenses/MIT).
+Rgversion is released under the [MIT License](https://opensource.org/licenses/MIT).
