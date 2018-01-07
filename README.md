@@ -23,3 +23,7 @@ rgversion rails puma pg
 ```
 
 After that semantic version of gem(s) will be copied to your clipboard.
+
+## License
+
+rgversion is released under the [MIT License](https://opensource.org/licenses/MIT).
