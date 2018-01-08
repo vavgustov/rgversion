@@ -1,4 +1,4 @@
 module Rgversion
-  VERSION = "0.2.2".freeze
-  PREVIOUS_VERSION = "0.2.1".freeze
+  VERSION = "1.0.0".freeze
+  PREVIOUS_VERSION = "0.2.2".freeze
 end
