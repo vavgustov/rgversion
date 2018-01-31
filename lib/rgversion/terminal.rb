@@ -13,7 +13,7 @@ module Rgversion
     def copy_to_clipboard
       return if @output.blank?
       if command_exists?
-        system("echo #{@output} | #{clarified_command}")
+        system("echo \"#{@output}\" | #{clarified_command}")
         puts "\nCopied to your clipboard!".green
       else
         render_instructions
