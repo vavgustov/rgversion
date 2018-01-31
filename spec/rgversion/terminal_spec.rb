@@ -3,7 +3,7 @@ require "spec_helper"
 RSpec.describe Rgversion::Terminal do
   let(:gems) { ["gem 'sinatra', '~> 2.0'"] }
   let(:errors) { ["this_gem not found"] }
-  let(:terminal_with_args) { Rgversion::Terminal.new(:pbcopy, { gems: gems, errors: errors }) }
+  let(:terminal_with_args) { Rgversion::Terminal.new(gems: gems, errors: errors) }
 
   describe "#report" do
     it "render gems" do

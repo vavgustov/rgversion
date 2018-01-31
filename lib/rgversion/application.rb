@@ -6,9 +6,9 @@ module Rgversion
     end
 
     def run
-      terminal = Terminal.new(command, results)
+      terminal = Terminal.new(results)
       terminal.report
-      terminal.copy_to_clipboard
+      terminal.copy_to_clipboard if OS.mac?
     rescue StandardError => ex
       $stderr.puts ex.message
     end
@@ -18,12 +18,6 @@ module Rgversion
     def results
       spider = Spider.new(@gems, @selector)
       spider.walk
-    end
-
-    def command
-      return :pbcopy if OS.mac?
-      return :xclip if OS.linux?
-      nil
     end
   end
 end
