@@ -3,28 +3,39 @@ require "open-uri"
 
 module Rgversion
   class Spider
-    def initialize(gems)
+    def initialize(gems, selector)
+      raise NoArguments, error_messages(:arguments) if gems.blank?
       @gems = gems
+      @selector = selector
     end
 
-    def output
-      gem_text = []
+    def walk
+      lines = []
+      errors = []
       @gems.each do |gem|
         begin
-          gem_text << grab_version(gem)
+          lines << grab_version(gem)
         rescue OpenURI::HTTPError
-          puts "#{gem} not found"
+          errors << "#{gem} not found"
         end
       end
-      gem_text
+      { gems: lines, errors: errors }
     end
 
     private
 
+    def error_messages(key)
+      {
+        arguments: "No gems passed as arguments. Try to use like this:\nrgversion rails sinatra",
+        selector: "Selector #{@selector} doesn't exists on the page.\nRgversion should be updated."
+      }[key].red
+    end
+
     def grab_version(gem)
       gem_url = "https://rubygems.org/gems/#{gem}"
       gem_page = Nokogiri::HTML(open(gem_url))
-      gem_page.at("#gemfile_text")["value"]
+      raise WrongSelector, error_messages(:selector) if gem_page.at(@selector).nil?
+      gem_page.at(@selector)["value"]
     end
   end
 end

@@ -1,10 +1,29 @@
 module Rgversion
-  module Application
-    def self.run
-      terminal = Terminal.new ARGV
+  class Application
+    def initialize(gems, selector)
+      @gems = gems
+      @selector = selector
+    end
+
+    def run
+      terminal = Terminal.new(command, results)
+      terminal.report
       terminal.copy_to_clipboard
-    rescue NoArguments => ex
-      puts ex.message
+    rescue StandardError => ex
+      $stderr.puts ex.message
+    end
+
+    private
+
+    def results
+      spider = Spider.new(@gems, @selector)
+      spider.walk
+    end
+
+    def command
+      return :pbcopy if OS.mac?
+      return :xclip if OS.linux?
+      nil
     end
   end
 end

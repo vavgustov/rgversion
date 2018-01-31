@@ -2,4 +2,5 @@
 
 require "rgversion"
 
-Rgversion::Application.run
+app = Rgversion::Application.new(ARGV, Rgversion::SELECTOR)
+app.run
