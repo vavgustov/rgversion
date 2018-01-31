@@ -1,6 +1,7 @@
 module Rgversion
   class Terminal
-    def initialize(results)
+    def initialize(command, results)
+      @command = command
       @results = results
     end
 
@@ -11,8 +12,12 @@ module Rgversion
 
     def copy_to_clipboard
       return if @output.blank?
-      `echo "#{@output}" | pbcopy`
-      puts "\nCopied to your clipboard!".green
+      if command_exists?
+        `echo "#{@output}" | #{clarified_command}`
+        puts "\nCopied to your clipboard!".green
+      else
+        render_instructions
+      end
     end
 
     private
@@ -27,6 +32,38 @@ module Rgversion
       return if @results[:gems].blank?
       @output = @results[:gems].join("\n")
       puts @output
+    end
+
+    def clarified_command
+      return "#{@command} -selection clipboard" if OS.linux?
+      @command
+    end
+
+    def command_exists?
+      return false if which(@command.to_s).nil?
+      true
+    end
+
+    # based on https://stackoverflow.com/a/5471032
+    # let's avoid find_executable from mkmf because in this case we need to supress logs
+    def which(cmd)
+      exts = ENV['PATHEXT'] ? ENV['PATHEXT'].split(';') : ['']
+      ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|
+        exts.each do |ext|
+          exe = File.join(path, "#{cmd}#{ext}")
+          return exe if File.executable?(exe) && !File.directory?(exe)
+        end
+      end
+      nil
+    end
+
+    def render_instructions
+      if @command.nil?
+        puts "\nRgversion doesn't support copy to clipboard feature if your OS isn't macOS or Linux. You can manually copy output above."
+      else
+        puts "\nUnable to copy to clipboard because #{@command} is missed.\nTry the command below if you are on Ubuntu/Debian:"
+        puts "sudo apt-get install #{@command}"
+      end
     end
   end
 end
