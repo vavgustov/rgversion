@@ -16,7 +16,7 @@ module Rgversion
       @gems.each do |gem|
         begin
           lines << grab_version(gem)
-        rescue OpenURI::HTTPError
+        rescue OpenURI::HTTPError, GemNotHosted
           errors << "#{gem} not found"
         end
       end
@@ -35,7 +35,10 @@ module Rgversion
     def grab_version(gem)
       gem_url = "https://rubygems.org/gems/#{gem}"
       gem_page = Nokogiri::HTML(open(gem_url))
-      raise WrongSelector, error_messages(:selector) if gem_page.at(@selector).nil?
+      if gem_page.at(@selector).nil?
+        raise GemNotHosted if gem_page.at("#markup").text().include? "This gem is not currently hosted on"
+        raise WrongSelector, error_messages(:selector)
+      end
       gem_page.at(@selector)["value"]
     end
   end

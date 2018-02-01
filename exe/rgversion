@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require "rgversion"
+require_relative "../lib/rgversion"
 
 app = Rgversion::Application.new(ARGV, Rgversion::Settings::SELECTOR)
 app.run
