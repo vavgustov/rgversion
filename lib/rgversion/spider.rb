@@ -7,6 +7,7 @@ module Rgversion
       raise NoArguments, error_messages(:arguments) if gems.blank?
       @gems = gems
       @selector = selector
+      @gems.sort!
     end
 
     def walk
