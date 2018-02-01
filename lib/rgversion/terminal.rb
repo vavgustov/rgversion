@@ -12,7 +12,7 @@ module Rgversion
 
     def copy_to_clipboard
       return if @output.blank?
-      clipboard = Clipboard.new(@command)
+      clipboard = Clipboard.new(@output, @command)
       clipboard.copy
     end
 

@@ -1,12 +1,13 @@
 module Rgversion
   class Clipboard
-    def initialize(command)
+    def initialize(content, command)
+      @content = content
       @command = command
     end
 
     def copy
       if command_exists?
-        system("echo \"#{@output}\" | #{clarified_command}")
+        system("echo \"#{@content}\" | #{clarified_command}")
         puts "\nCopied to your clipboard!".green
       else
         instruction = Instruction.new(@command)
