@@ -8,7 +8,7 @@ module Rgversion
     def copy
       if command_exists?
         system("echo \"#{@content}\" | #{clarified_command}")
-        puts "\nCopied to your clipboard!".green
+        puts "\nCopied to clipboard!".green
       else
         instruction = Instruction.new(@command)
         instruction.render
