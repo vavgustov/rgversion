@@ -3,7 +3,7 @@
  
 This library allow you to quickly copy latest semantic versions of specified gems to your clipboard. Versions will be taken from [`rubygems.org`](https://rubygems.org/). Then you can past them in your `Gemfile`.
 
--![image](https://user-images.githubusercontent.com/312873/28492511-d2dbf140-6f0d-11e7-9912-beb8b94a1ca7.png)
+![image](https://user-images.githubusercontent.com/312873/28492511-d2dbf140-6f0d-11e7-9912-beb8b94a1ca7.png)
 
 ## Installation
 
