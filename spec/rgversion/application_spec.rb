@@ -1,8 +1,8 @@
 require "spec_helper"
 
 RSpec.describe Rgversion::Application do
-  let(:application_with_args) { Rgversion::Application.new ['sinatra'], Rgversion::SELECTOR }
-  let(:application_without_args) { Rgversion::Application.new [], Rgversion::SELECTOR }
+  let(:application_with_args) { Rgversion::Application.new ['sinatra'], Rgversion::Settings::SELECTOR }
+  let(:application_without_args) { Rgversion::Application.new [], Rgversion::Settings::SELECTOR }
 
   describe "#run" do
     context "when args exists" do

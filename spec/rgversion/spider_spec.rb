@@ -1,8 +1,8 @@
 require "spec_helper"
 
 RSpec.describe Rgversion::Spider do
-  let(:spider_gem_not_exists) { Rgversion::Spider.new(%w[not-existing-gem-one1], Rgversion::SELECTOR) }
-  let(:spider_with_correct_selector) { Rgversion::Spider.new(%w[rgversion], Rgversion::SELECTOR) }
+  let(:spider_gem_not_exists) { Rgversion::Spider.new(%w[not-existing-gem-one1], Rgversion::Settings::SELECTOR) }
+  let(:spider_with_correct_selector) { Rgversion::Spider.new(%w[rgversion], Rgversion::Settings::SELECTOR) }
   let(:spider_with_wrong_selector) { Rgversion::Spider.new %w[rgversion], '#wrong_selector' }
 
   describe "#output" do
