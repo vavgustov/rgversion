@@ -4,7 +4,7 @@
 This gem allow you to add to clipboard latest semantic versions of specified gems from terminal. Then you can past 
 them to `Gemfile` or whatever you want. [Giphy here](https://github.com/vavgustov/rgversion/wiki/Giphy).
 
-![image](https://user-images.githubusercontent.com/312873/28492511-d2dbf140-6f0d-11e7-9912-beb8b94a1ca7.png)
+![image](https://user-images.githubusercontent.com/312873/35704274-00d2daec-07b0-11e8-8af8-f9717dd8bbab.png)
 
 ## Installation
 
