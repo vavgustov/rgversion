@@ -28,7 +28,7 @@ Open terminal and execute ``rgversion`` with list of needed gems. E.g:
 rgversion rails puma pg
 ```
 
-Then just past your clipboard to Gemfile.
+Then just past your clipboard to `Gemfile`.
 
 ## License
 
